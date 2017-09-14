@@ -1,0 +1,11 @@
+#toptext{
+	text-align: center;
+	color: #1976d2;
+}
+
+#entry{
+	border-width: 3px;
+	border-radius: 10px;
+	border-color: black;
+	border-style: solid;
+}
