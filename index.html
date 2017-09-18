@@ -3,6 +3,8 @@
 <head>
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+<script src="https://code.jquery.com/jquery.js"></script>
 	<title>Contact Your Senator</title>
 </head>
 <body>
@@ -22,17 +24,20 @@
             <div class="col s4 push-s1">
                   <div class="card-panel blue darken-2" id="entry">
 
-                        <input placeholder="State Name by abrv." id="state" type="text" class="input">
+                        <input placeholder="State Name by abrv." id="state" type="text" class="input" maxlength="2">
+
                         
                   </div> 
+                       
+              <button class="btn btn-default" id="abbreviation" type="submit">Submit</button>
             </div>
       </div> 
 
       <div class="row">
             <div class="col s4">
-                  <h5>Senator Name</h5>
+                  <h5>Senator Names</h5>
             </div>
-            <div class="col s8">
+            <div class="col s8" id="senators-view">
             to be populated
 
 
@@ -45,7 +50,7 @@
             <div class="col s4">
                   <h5>Senator Bio</h5>
             </div>
-            <div class="col s8">
+            <div class="col s8" id="senator-bio">
             to be populated
 
 
@@ -155,5 +160,6 @@
 
 
 
+<script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 </html>
