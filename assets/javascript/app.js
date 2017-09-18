@@ -42,5 +42,5 @@ function displaySenatorInfo(){
          }
    });
 }
-
+console.log("Hello");
 $(document).on("click", ".senators", displaySenatorInfo);
