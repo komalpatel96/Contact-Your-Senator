@@ -1,6 +1,12 @@
+body{
+	background-image: url(../images/senate1.jpg);
+	background-size: 100%;
+}
+
 #toptext{
+	font-family: 'Old Standard TT', serif;
 	text-align: center;
-	color: #1976d2;
+	
 }
 
 #entry{
@@ -11,7 +17,15 @@
 }
 
 #state{
+	text-align: center;
+
+	background-opacity: .7;
+	font-size: 1.5em;
 	border-bottom: none;
 	box-shadow: none;
 	margin-bottom: 0px;
+}
+
+.navwrapper{
+	width: 100%;
 }
