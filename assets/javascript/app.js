@@ -26,8 +26,8 @@ $("#abbreviation").on("click", function(event) {
 });
 
 function displaySenatorInfo(){
-   var url=$(this).attr("data-api")
-
+   var url = $(this).attr("data-api");
+   var name = $(this).attr("data-name");
    $.ajax({
          url: url,
          type: "GET",
@@ -41,6 +41,17 @@ function displaySenatorInfo(){
 
          }
    });
+   var otherurl = "https://api.gettyimages.com/v3/search/images?phrase=" + name;
+    $.ajax({
+         url: otherurl,
+         type: "GET", 
+         headers: { 'api-key':'y2ahk5a6eqaj6gygccakm6hg' },
+         success: function(response){
+           console.log(response);
+
+         }
+   });
+
 }
 console.log("Hello");
 $(document).on("click", ".senators", displaySenatorInfo);
