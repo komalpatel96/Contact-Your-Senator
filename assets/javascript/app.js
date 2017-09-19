@@ -9,11 +9,9 @@ $("#abbreviation").on("click", function(event) {
          beforeSend: function(xhr){xhr.setRequestHeader('X-API-Key', 'pOeVTMP0uUXsG3Gn6uAQ9AT2claobUTPM0Wse53Q');},
          success: function(response){
             console.log(response);
-            console.log()
             for (var i = 0; i < response.results.length; i++){
                var specialbutton = $("<button>");
-               specialbutton.addClass("senators");
-
+               specialbutton.addClass("senators waves-effect grey darken-5 btn");
                specialbutton.attr("data-name", response.results[i].name);
                specialbutton.attr("data-api", response.results[i].api_uri);
 
@@ -33,8 +31,13 @@ function displaySenatorInfo(){
          type: "GET",
          beforeSend: function(xhr){xhr.setRequestHeader('X-API-Key', 'pOeVTMP0uUXsG3Gn6uAQ9AT2claobUTPM0Wse53Q');},
          success: function(response){
+
+
             console.log(response);
-            console.log(response.results[0].url);
+            $("#website").attr("href", response.results[0].url);
+            $("#contact").attr("href", response.results[0].roles[0].contact_form);
+            $("#facebook").attr("href", "http://facebook.com/" + response.results[0].twitter_account);
+            $("#recentnews").attr("href", response.results[0].times_topics_url);
             console.log(response.results[0].twitter_account);
             console.log(response.results[0].times_topics_url);
 
@@ -53,5 +56,4 @@ function displaySenatorInfo(){
    });
 
 }
-console.log("Hello");
 $(document).on("click", ".senators", displaySenatorInfo);
