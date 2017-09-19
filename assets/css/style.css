@@ -1,17 +1,71 @@
-#toptext{
-	text-align: center;
-	color: #1976d2;
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+  color: #000000;
 }
 
-#entry{
-	border-width: 3px;
-	border-radius: 10px;
-	border-color: black;
-	border-style: solid;
+.container .row {
+    margin-left: -10rem;
+    margin-right: -10rem;
 }
 
-#state{
-	border-bottom: none;
-	box-shadow: none;
-	margin-bottom: 0px;
+p {
+  line-height: 2rem;
+}
+
+.grey.darken-4 {
+    background-color: #212121 !important;
+    margin-left: 30%;
+}
+
+#state.input{
+  text-align: center;
+}
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+  color: #000000;
+}
+
+footer.page-footer {
+  margin: 0;
 }
