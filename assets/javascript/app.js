@@ -36,7 +36,7 @@ function displaySenatorInfo(){
             console.log(response);
             $("#website").attr("href", response.results[0].url);
             $("#contact").attr("href", response.results[0].roles[0].contact_form);
-            $("#facebook").attr("href", "http://facebook.com/" + response.results[0].twitter_account);
+            $("#youtube").attr("href", "http://youtube.com/" + response.results[0].youtube_account);
             $("#recentnews").attr("href", response.results[0].times_topics_url);
             console.log(response.results[0].twitter_account);
             console.log(response.results[0].times_topics_url);
@@ -50,8 +50,11 @@ function displaySenatorInfo(){
          type: "GET", 
          headers: { 'api-key':'y2ahk5a6eqaj6gygccakm6hg' },
          success: function(response){
-           console.log(response);
-
+           console.log(response.images[0].display_sizes[0].uri);
+           var senatorImage = $("<img>");
+           senatorImage.attr("id", "senatorImage")
+           senatorImage.attr("src", response.images[0].display_sizes[0].uri);
+           $("#imagecontainer").html(senatorImage);
          }
    });
 
