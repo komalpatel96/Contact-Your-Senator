@@ -8,13 +8,26 @@
 
 nav ul a,
 nav .brand-logo {
-  color: #444;
+  color: #000000;
+}
+
+.container .row {
+    margin-left: -10rem;
+    margin-right: -10rem;
 }
 
 p {
   line-height: 2rem;
 }
 
+.grey.darken-4 {
+    background-color: #212121 !important;
+    margin-left: 30%;
+}
+
+#state.input{
+  text-align: center;
+}
 .button-collapse {
   color: #26a69a;
 }
@@ -46,10 +59,11 @@ p {
 }
 
 .icon-block {
-  padding: 0 15px;
+  padding: 0;
 }
 .icon-block .material-icons {
   font-size: inherit;
+  color: #000000;
 }
 
 footer.page-footer {
