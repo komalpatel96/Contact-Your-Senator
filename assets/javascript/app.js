@@ -20,6 +20,8 @@ $("#abbreviation").on("click", function(event) {
                specialbutton.addClass("senators waves-effect grey darken-5 btn");
                specialbutton.attr("data-api", response.results[i].api_uri);
                specialbutton.attr("data-nextterm", response.results[i].next_election);
+               specialbutton.attr("data-party", response.results[i].party);
+
                specialbutton.text(response.results[i].name);
 
                $("#senators-view").append(specialbutton);
@@ -42,8 +44,13 @@ $("#abbreviation").on("click", function(event) {
 function displaySenatorInfo(){
    var url = $(this).attr("data-api");
    var nextTerm = $(this).attr("data-nextterm")
+   var party = $(this).attr("data-party")
+
+
    console.log(nextTerm);
-   $("#displayelection").html("Next Election:" + nextTerm);
+   $("#displayelection").html("Next Election: " + nextTerm);
+   $("#displayparty").html("Party: " + party);
+
    $("#senatorstuff").show();
    $.ajax({
          url: url,
@@ -56,7 +63,17 @@ function displaySenatorInfo(){
             $("#website").attr("href", response.results[0].url);
             $("#contact").attr("href", response.results[0].roles[0].contact_form);
             $("#youtube").attr("href", "http://youtube.com/" + response.results[0].youtube_account);
-            $("#recentnews").attr("href", response.results[0].times_topics_url);
+            $("#recentnews").attr("href", response.results[0].times_topics_url);   
+
+            $("#displaybirthdate").html("Birthdate: " + response.results[0].date_of_birth);
+            $("#mostRecentVote").html("Most recent vote: " + response.results[0].most_recent_vote);
+            $("#billsCorosponded").html("Bill corosponsed: " + response.results[0].roles[0].bills_cosponsored);
+            $("#billsSponsered").html("Bill sponsered: " + response.results[0].roles[0].bills_sponsored);
+            $("#phoneNumber").html("Phone: " + response.results[0].roles[0].phone);
+            $("#officeAddress").html("Office: " + response.results[0].roles[0].office);
+
+
+
          }
    });
 
