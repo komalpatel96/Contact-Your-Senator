@@ -1,9 +1,22 @@
+function reset(){
 $("#senatorstuff").hide();
+$("#senators-view").empty();
+$("#senator-pics").empty();
+$("#displayelection").empty();
+$("#displayparty").empty();
+$("#displaybirthdate").empty();
+$("#mostRecentVote").empty();
+$("#billsSponsered").empty();
+$("#phoneNumber").empty();
+$("#officeAddress").empty();
+}
+reset();
 
 $("#abbreviation").on("click", function(event) {
 	event.preventDefault();
-    $("#senators-view").empty();
-    $("#senator-pics").empty();
+
+   reset();
+
 	var abbr = $("#state").val().trim();
    var checkstatement = false;
 
@@ -15,13 +28,13 @@ $("#abbreviation").on("click", function(event) {
                   console.log(response);
             if (response.status === "ERROR")
             {
-               $("#senators-view").html("Please select a correct abbreviation")
+               $("#senator-title").html("Please select a correct abbreviation")
             }
             for (var i = 0; i < response.results.length; i++){
                var otherurl = "https://api.gettyimages.com/v3/search/images?phrase=" + response.results[i].name;
 
                var specialbutton = $("<button>");
-
+               $("#senator-title").html("Select a Senator by clicking on the Corresponding Button.")
                specialbutton.addClass("senators waves-effect grey darken-5 btn");
                specialbutton.attr("data-api", response.results[i].api_uri);
                specialbutton.attr("data-nextterm", response.results[i].next_election);
@@ -71,6 +84,7 @@ function displaySenatorInfo(){
             $("#youtube").attr("href", "http://youtube.com/" + response.results[0].youtube_account);
             $("#recentnews").attr("href", response.results[0].times_topics_url);   
 
+            $("#senator-title").html("Facts About: " + response.results[0].first_name + " " + response.results[0].last_name);   
             $("#displaybirthdate").html("Birthdate: " + response.results[0].date_of_birth);
             $("#mostRecentVote").html("Most recent vote: " + response.results[0].most_recent_vote);
             $("#billsCorosponded").html("Bill corosponsed: " + response.results[0].roles[0].bills_cosponsored);
