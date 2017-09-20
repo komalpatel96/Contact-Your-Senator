@@ -79,3 +79,13 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
+#senatorImage{
+  width: 372px;
+  height: 300px;
+  margin: 10px;
+}
+
+.senators:active {
+  background-color: cyan;
+}
