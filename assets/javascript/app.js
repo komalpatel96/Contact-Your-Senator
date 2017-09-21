@@ -87,8 +87,8 @@ function displaySenatorInfo(){
             $("#senator-title").html("Facts About: " + response.results[0].first_name + " " + response.results[0].last_name);   
             $("#displaybirthdate").html("Birthdate: " + response.results[0].date_of_birth);
             $("#mostRecentVote").html("Most recent vote: " + response.results[0].most_recent_vote);
-            $("#billsCorosponded").html("Bill corosponsed: " + response.results[0].roles[0].bills_cosponsored);
-            $("#billsSponsered").html("Bill sponsered: " + response.results[0].roles[0].bills_sponsored);
+            $("#billsCosponsored").html("Bill cosponsored: " + response.results[0].roles[0].bills_cosponsored);
+            $("#billsSponsored").html("Bill sponsored: " + response.results[0].roles[0].bills_sponsored);
             $("#phoneNumber").html("Phone: " + response.results[0].roles[0].phone);
             $("#officeAddress").html("Office: " + response.results[0].roles[0].office);
 
