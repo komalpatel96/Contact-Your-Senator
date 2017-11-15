@@ -45,7 +45,7 @@ $("#abbreviation").on("click", function(event) {
                    $.ajax({
                   url: otherurl,
                   type: "GET", 
-                  headers: { 'api-key':'y2ahk5a6eqaj6gygccakm6hg' },
+                  headers: { 'api-key':'cgw6dcdm9svkuekgw2jrcx94' },
                   customButton: specialbutton,
                   success: function(response){
                   var senatorImage = $("<img>");
