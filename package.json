@@ -1,0 +1,25 @@
+{
+  "name": "groupproject1",
+  "version": "1.0.0",
+  "description": "This application is extremely easy to set up, it uses two APIs (Getty and ProPublica) in order to render two senators upon an abbreviation that is being inputted. The Image of the Senators and the name of each senator is displayed. When you click on the Senator Button, it displays the rest of the info, including how to contact them, their website, their youtube channel, and new york times articles about that senator.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/komalpatel96/GroupProject1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/komalpatel96/GroupProject1/issues"
+  },
+  "homepage": "https://github.com/komalpatel96/GroupProject1#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "path": "^0.12.7"
+  }
+}
